@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Installation') {
             steps {
-                npm ci
+                sh'npm ci'
             }
         }
         stage('Building') {
             steps {
-                npx turbo serve
+                sh'npx turbo serve'
             }
         }
        
