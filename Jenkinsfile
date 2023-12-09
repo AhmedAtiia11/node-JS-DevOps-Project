@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh'BUILD_ID=dontKillMe forever npx turbo serve'
+                sh'npx turbo serve  app.log 2>&1'
             }
         }
         
