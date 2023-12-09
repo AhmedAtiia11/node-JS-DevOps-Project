@@ -10,12 +10,12 @@ pipeline {
 
         stage('Installation') {
             steps {
-                sh'npm ci'
+                sh'npm ci --silent'
             }
         }
         stage('Building') {
             steps {
-                sh'npx turbo serve > app.log 2>&1'
+                sh'daemonize -E BUILD_ID=dontKillMe npx turbo serve '
             }
         }
         
