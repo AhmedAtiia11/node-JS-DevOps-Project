@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh'daemonize -E BUILD_ID=dontKillMe npx turbo serve '
+                sh'npx turbo serve > app.log 2>&1 &'
             }
         }
         
