@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh'npx turbo serve &'
+                sh'nohub npx turbo serve &'
             }
         }
         
