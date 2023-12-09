@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh'npx turbo serve > app.log 2>&1 &'
+                sh'npx turbo serve &'
             }
         }
         
