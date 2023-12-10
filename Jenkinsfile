@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh "tmux new -d -s node-app 'forever start -o forever-out.log -e forever-err.log --workingDir /home/jenkins/workspace/node-JS-project/ /usr/bin/npx turbo serve'"
-                sleep time: 150, unit: 'SECONDS'
+                sh "nohup npx turbo serve &"
+                sleep time: 100, unit: 'SECONDS'
             }
         }
         
