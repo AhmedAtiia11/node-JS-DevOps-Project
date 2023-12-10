@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Building') {
             steps {
-                sh'nohup npx turbo serve &'
+                sh'forever start -o forever-out.log -e forever-err.log --workingDir /home/jenkins/workspace/node-JS-project/ /usr/bin/npx turbo serve'
             }
         }
         
