@@ -24,6 +24,7 @@ pipeline {
     post {
         success {
             echo 'All tests passed...'
+            sleep time: 100, unit: 'SECONDS
         }
 
         failure {
