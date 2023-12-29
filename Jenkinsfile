@@ -10,13 +10,13 @@ pipeline {
         stage('Unit Test') {
             steps {
                 // Run unit tests
-                sh 'node -v' // Assuming Maven is used for building and testing
+                sh 'node -v'
+                echo 'node Version 19 is now  installed'
             }
         }}
     post {
         success {
             echo 'All tests passed...'
-            sleep time: 100, unit: 'SECONDS'
         }
 
         failure {
