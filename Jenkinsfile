@@ -12,7 +12,7 @@ pipeline {
                 // Run unit tests
                 sh 'node -v' // Assuming Maven is used for building and testing
             }
-        }
+        }}
     post {
         success {
             echo 'All tests passed...'
@@ -24,6 +24,6 @@ pipeline {
         }
     }
 }
-}
+
 
 
