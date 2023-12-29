@@ -1,26 +1,18 @@
 pipeline {
     agent any
     stages {
+        stage('NodeJS Installation') {
+            steps {
+                sh 'curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -' 
+                sh 'sudo apt install -y nodejs'
+            }
+        }
         stage('Unit Test') {
             steps {
                 // Run unit tests
                 sh 'node -v' // Assuming Maven is used for building and testing
             }
         }
-
-        stage('Installation') {
-            steps {
-                sh'npm ci --silent'
-            }
-        }
-        stage('Building') {
-            steps {
-                sh "nohup npx turbo serve &"
-                sleep time: 100, unit: 'SECONDS'
-            }
-        }
-        
-    }
     post {
         success {
             echo 'All tests passed...'
